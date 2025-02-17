@@ -1,0 +1,103 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Groceries",
+      "prefix": "coffee",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/coffee-asorted.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Groceries",
+      "prefix": "hand",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Groceries",
+      "prefix": "handpicked",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Groceries",
+      "prefix": "natural",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Oil Organic",
+      "price": 249,
+      "cat_prefix": "natural",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "max": 2
+    },
+    {
+      "id": 2,
+      "title": "Chilly So Hot",
+      "price": 229,
+      "cat_prefix": "natural",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "max": 4
+    },
+    {
+      "id": 3,
+      "title": "Shampoo Organic",
+      "price": 200,
+      "cat_prefix": "natural",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer.jpg",
+      "max": 1
+    },
+    {
+      "id": 4,
+      "title": "Organic",
+      "price": 100,
+      "cat_prefix": "coffee",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "max": 3
+    },
+    {
+      "id": 5,
+      "title": "Chilly Organic",
+      "price": 300,
+      "cat_prefix": "coffee",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "max": 5
+    },
+    {
+      "id": 6,
+      "title": "Hanpick Organic",
+      "price": 300,
+      "cat_prefix": "handpicked",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "max": 2
+    },
+    {
+      "id": 9,
+      "title": "Oil Organic",
+      "price": 500,
+      "cat_prefix": "handpicked",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "max": 2
+    },
+    {
+      "id": 17,
+      "title": "Organic",
+      "price": 449,
+      "cat_prefix": "hand",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "max": 1
+    },
+    {
+      "id": 18,
+      "title": "Organic",
+      "price": 500,
+      "cat_prefix": "natural",
+      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "max": 5
+    }
+  ],
+  "wishlist": []
+}
