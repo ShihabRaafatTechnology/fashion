@@ -28,74 +28,74 @@
   "products": [
     {
       "id": 1,
-      "title": "Oil Organic",
+      "title": "Classic",
       "price": 249,
       "cat_prefix": "baby",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "img": "https://img.freepik.com/free-photo/full-shot-kids-posing-together_23-2149853383.jpg?t=st=1740671253~exp=1740674853~hmac=3b58506eaa6cb30dc942de528cf1ffa0de7e8875d186227e0d139b95018e8d89&w=740",
       "max": 2
     },
     {
       "id": 2,
-      "title": "Chilly So Hot",
+      "title": "Modern",
       "price": 229,
       "cat_prefix": "baby",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "img": "https://img.freepik.com/free-photo/full-shot-kids-posing-together_23-2149067072.jpg?t=st=1740671106~exp=1740674706~hmac=d9dbdbb68d5864464b8e5b2000b182d0fe44e14f08b38fa0bf67a0cc231d0ee1&w=740",
       "max": 4
     },
     {
       "id": 3,
-      "title": "Shampoo Organic",
+      "title": "Classic",
       "price": 200,
       "cat_prefix": "young",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer.jpg",
+      "img": "https://img.freepik.com/free-photo/trendy-couple-gloomy-city_1157-14950.jpg?t=st=1740671147~exp=1740674747~hmac=ddf92fb00772dcde83b8b7a3706d4312b1e8ba92685e8d017f2032aab19a481b&w=740",
       "max": 1
     },
     {
       "id": 4,
-      "title": "Organic",
+      "title": "Classic",
       "price": 100,
       "cat_prefix": "men",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "img": "https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-hipster-model-dressed-warm-overcoat-posing-studio_158538-11452.jpg?t=st=1740670826~exp=1740674426~hmac=c486866576de61fb8d5d50904c4336cb83114aaf0a6d6a6b3fffb10cb4453a83&w=740",
       "max": 3
     },
     {
       "id": 5,
-      "title": "Chilly Organic",
+      "title": "Modern",
       "price": 300,
       "cat_prefix": "men",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "img": "https://img.freepik.com/free-photo/fashion-portrait-young-beautiful-man_158595-3836.jpg?t=st=1740670865~exp=1740674465~hmac=363446acfef7bbc1d7ae55575d28f5495e2ef11e8744b0b1c6de9d0644537341&w=740",
       "max": 5
     },
     {
       "id": 6,
-      "title": "Hanpick Organic",
+      "title": "Classic",
       "price": 300,
       "cat_prefix": "women",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "img": "https://img.freepik.com/free-photo/elegant-woman-black-hat-spring-forest_1157-35551.jpg?t=st=1740671071~exp=1740674671~hmac=d9d5c4c316d9d1bcd7541702546d452ecb0856ba8b204d7d77ef25e69df584be&w=740",
       "max": 2
     },
     {
       "id": 9,
-      "title": "Oil Organic",
+      "title": "Modern",
       "price": 500,
       "cat_prefix": "women",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "img": "https://img.freepik.com/free-photo/portrait-fashionable-young-woman-holding-cap-hand-standing-outside-restaurant_23-2148148231.jpg?t=st=1740671098~exp=1740674698~hmac=448d561f4530e1b429df3d19b301a3884fff8ba35814784f3fa4996ad40f7544&w=740",
       "max": 2
     },
     {
       "id": 17,
-      "title": "Organic",
+      "title": "Classic",
       "price": 449,
-      "cat_prefix": "hand",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
+      "cat_prefix": "men",
+      "img": "https://img.freepik.com/free-photo/man-suit_1303-5851.jpg?t=st=1740670909~exp=1740674509~hmac=99f39ad1246d514a870d7322a3b0f3ab3abbb61889f201dd8f40b034f499d1a8&w=740",
       "max": 1
     },
     {
       "id": 18,
-      "title": "Organic",
+      "title": "Modern",
       "price": 500,
-      "cat_prefix": "natural",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
+      "cat_prefix": "young",
+      "img": "https://img.freepik.com/free-photo/young-woman-sitting-near-by-standing-holding-hat-man_23-2148134033.jpg?t=st=1740671180~exp=1740674780~hmac=e1a67fd1f74e24c13a377384e8e9b745c43ce66c6204c4c0145dc972e68abae2&w=740",
       "max": 5
     }
   ],
@@ -114,6 +114,11 @@
       "userId": "1",
       "productId": 1,
       "id": 3
+    },
+    {
+      "userId": "1",
+      "productId": 18,
+      "id": 4
     }
   ]
 }

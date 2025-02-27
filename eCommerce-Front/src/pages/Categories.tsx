@@ -7,7 +7,7 @@ const Categories = () => {
   const { records, loading, error } = useCategories();
   return (
     <>
-      <Heading title={<>home / <span className="text-primary">categories</span></>} />
+      <Heading title={<>home / <span className="active">categories</span></>} />
       <Loading status={loading} error={error}>
         <GridList records={records} renderItems={(record) => <Category {...record} key={record.id} />} />
       </Loading>

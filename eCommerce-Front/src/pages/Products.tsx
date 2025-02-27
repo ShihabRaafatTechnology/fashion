@@ -7,7 +7,7 @@ const Products = memo(() => {
   const {productsFullInfo, params} = useProducts();
   return (
     <>
-      <Heading title={<>home / categories / products / <span className="text-primary">{params.prefix}</span></>} />
+      <Heading title={<>home / categories / products / <span className="active">{params.prefix}</span></>} />
       <GridList
         records={productsFullInfo}
         renderItems={(record) => <Product {...record} key={record.id} />}

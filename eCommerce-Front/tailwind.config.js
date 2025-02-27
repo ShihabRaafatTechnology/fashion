@@ -16,7 +16,7 @@ export default {
         "nav-secondary": "#000",
         "primary": "#b3b3a1",
         "secondary": "#fb8500",
-        "frame": "#050601",
+        "frame": "#080a01",
         "btn-secondary": "#f05346",
       },
     },

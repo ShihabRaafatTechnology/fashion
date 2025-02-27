@@ -22,7 +22,7 @@ const Product = memo(
             <FaRegHeart className="text-2xl text-red-500" />
           )}
         </div>
-        <img className="rounded-t-lg w-full" src={img} alt="product image" />
+        <img className="rounded-t-lg w-full max-h-[500px]" src={img} alt="product image" />
         <div className="px-5 py-5">
           <h5 className="text-xl merriweather-black tracking-tight">{title}</h5>
           <p className="text-sm merriweather-bold-italic capitalize font-semibold tracking-tight">
