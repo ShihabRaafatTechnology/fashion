@@ -17,7 +17,7 @@ export default {
         "primary": "#b3b3a1",
         "secondary": "#fb8500",
         "frame": "#050601",
-        "noise": "rgba(255,255,255,1)",
+        "btn-secondary": "#f05346",
       },
     },
   },

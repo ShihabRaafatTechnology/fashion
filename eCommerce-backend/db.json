@@ -2,27 +2,27 @@
   "categories": [
     {
       "id": 1,
-      "title": "Groceries",
-      "prefix": "coffee",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/coffee-asorted.jpg"
+      "title": "Classic",
+      "prefix": "men",
+      "img": "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 2,
-      "title": "Groceries",
-      "prefix": "hand",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer.jpg"
+      "title": "young",
+      "prefix": "women",
+      "img": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 3,
-      "title": "Groceries",
-      "prefix": "handpicked",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg"
+      "title": "young",
+      "prefix": "young",
+      "img": "https://images.unsplash.com/photo-1552939100-c648a5802eb6?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 4,
-      "title": "Groceries",
-      "prefix": "natural",
-      "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg"
+      "title": "young",
+      "prefix": "baby",
+      "img": "https://images.unsplash.com/photo-1541580621-cb65cc53084b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "products": [
@@ -30,7 +30,7 @@
       "id": 1,
       "title": "Oil Organic",
       "price": 249,
-      "cat_prefix": "natural",
+      "cat_prefix": "baby",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
       "max": 2
     },
@@ -38,7 +38,7 @@
       "id": 2,
       "title": "Chilly So Hot",
       "price": 229,
-      "cat_prefix": "natural",
+      "cat_prefix": "baby",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
       "max": 4
     },
@@ -46,7 +46,7 @@
       "id": 3,
       "title": "Shampoo Organic",
       "price": 200,
-      "cat_prefix": "natural",
+      "cat_prefix": "young",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer.jpg",
       "max": 1
     },
@@ -54,7 +54,7 @@
       "id": 4,
       "title": "Organic",
       "price": 100,
-      "cat_prefix": "coffee",
+      "cat_prefix": "men",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
       "max": 3
     },
@@ -62,7 +62,7 @@
       "id": 5,
       "title": "Chilly Organic",
       "price": 300,
-      "cat_prefix": "coffee",
+      "cat_prefix": "men",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
       "max": 5
     },
@@ -70,7 +70,7 @@
       "id": 6,
       "title": "Hanpick Organic",
       "price": 300,
-      "cat_prefix": "handpicked",
+      "cat_prefix": "women",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil.jpg",
       "max": 2
     },
@@ -78,7 +78,7 @@
       "id": 9,
       "title": "Oil Organic",
       "price": 500,
-      "cat_prefix": "handpicked",
+      "cat_prefix": "women",
       "img": "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies.jpg",
       "max": 2
     },
@@ -99,5 +99,21 @@
       "max": 5
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "userId": "1",
+      "productId": 3,
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "productId": 2,
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "productId": 1,
+      "id": 3
+    }
+  ]
 }

@@ -42,6 +42,21 @@ const router = createBrowserRouter([
         return true;
       },
     }, {
+      path: "products/:prefix",
+      element: <Suspense fallback="Loading please wait..."><Products /></Suspense>,
+      loader: ({ params }) => {
+        if (
+          typeof params.prefix !== "string" ||
+          !/^[a-z]+$/i.test(params.prefix)
+        ) {
+          throw new Response("Bad Request", {
+            statusText: "Category not found",
+            status: 400,
+          });
+        }
+        return true;
+      },
+    }, {
       path: "cart",
       element: <Suspense fallback="Loading please wait..."><ShoppingCart /></Suspense>
     }, {

@@ -88,7 +88,7 @@ const Header = () => {
         <div
           className={
             isNavOpen
-              ? "fixed top-0 right-0 w-[80vw] h-[100vh] z-50 bg-current"
+              ? "fixed top-0 right-0 w-[80vw] h-[100vh] z-50 bg-black"
               : "hidden"
           }
         >

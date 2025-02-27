@@ -27,8 +27,6 @@ const cartSlice = createSlice({
             } else {
                 state.items[id] = 1;
             }
-            console.log("addToCart: " + state.items[id]);
-
         },
         removeFromCart: (state, action) => {
             const id = action.payload;
@@ -37,15 +35,11 @@ const cartSlice = createSlice({
             } else {
                 state.items[id] = 0;
             }
-            console.log("removeFromCart: " + state.items[id]);
         },
         removeCart: (state, action) => {
             const id = action.payload;
-            console.log("removeCartMethod: " + id);
-            console.log("removeCartBefore: " + state.items[id]);
             delete state.items[id];
             state.productsFullInfo = state.productsFullInfo.filter((el)=> el.id !== action.payload)
-            console.log("removeCartAfter: " + state.items[id]);
         },
         cartProductsFullInfo: (state) =>{
             state.productsFullInfo = [];
