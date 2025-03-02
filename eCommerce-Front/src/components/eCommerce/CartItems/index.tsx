@@ -22,7 +22,7 @@ const CartItems = memo(({ id, title, cat_prefix, img, price, quantity, max }: TP
           </div>
           <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
             <div className="flex items-center border-gray-100">
-              <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={removeFromCartHandler}>
+              <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-secondary hover:text-blue-50" onClick={removeFromCartHandler}>
                 -
               </span>
               <input
@@ -31,7 +31,7 @@ const CartItems = memo(({ id, title, cat_prefix, img, price, quantity, max }: TP
                 min="1"
                 readOnly
               />
-              <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={addToCartHandler}>
+              <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-secondary hover:text-blue-50" onClick={addToCartHandler}>
                 +
               </span>
             </div>

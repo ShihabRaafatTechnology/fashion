@@ -4,92 +4,63 @@ import { memo } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const Product = memo(
-  ({ id, title, img, cat_prefix, price, quantity, max, isLiked }: TProduct) => {
+  ({ id, title, img, price, after_price, sale, quantity, max, isLiked }: TProduct) => {
     if (id === undefined) {
       console.error("Product ID is undefined.");
       return null; // Render nothing or a fallback UI
     }
     const { likeToggleHandler, isLoading, isMaxOrders, addToCartHandler, isBtnDisabled } = useProduct({ id, quantity, max })
     return (
-      <div className="max-w-sm rounded-lg drop-shadow-2xl bg-slate-700 relative">
-        <div
-          className="absolute top-[15px] right-[15px]"
-          onClick={likeToggleHandler}
-        >
-          {isLoading || isLiked ? (
-            <FaHeart className="text-2xl text-red-500 hover:cursor-pointer" />
-          ) : (
-            <FaRegHeart className="text-2xl text-red-500" />
-          )}
-        </div>
-        <img className="rounded-t-lg w-full max-h-[500px]" src={img} alt="product image" />
-        <div className="px-5 py-5">
-          <h5 className="text-xl merriweather-black tracking-tight">{title}</h5>
-          <p className="text-sm merriweather-bold-italic capitalize font-semibold tracking-tight">
-            {cat_prefix}
-          </p>
-          <div className="flex items-center mt-2.5 mb-5">
-            <div className="flex items-center space-x-1 rtl:space-x-reverse">
-              <svg
-                className="w-4 h-4 text-secondary"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg
-                className="w-4 h-4 text-secondary"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg
-                className="w-4 h-4 text-secondary"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg
-                className="w-4 h-4 text-secondary"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-              <svg
-                className="w-4 h-4 text-gray-200 dark:text-gray-600"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-              </svg>
-            </div>
-            <span className="text-xs font-semibold px-2.5 py-0.5 rounded ms-3 text-primary">
-              4.0
-            </span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-xl font-bold">${price.toFixed(2)}</span>
-            <div className="focus:outline-none font-medium rounded-full cursor-pointer text-secondary hover:text-primary">
-              {isMaxOrders ? (
-                <span className="text-red-500 cursor-text">
-                  You are reached the max orders
-                </span>
+      <div className="gap-28 my-auto">
+        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+          <div className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
+            <img className="w-full" src={img} alt="product image" />
+            <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{sale}% OFF</span>
+            <div
+              className="absolute top-[15px] right-[15px]"
+              onClick={likeToggleHandler}
+            >
+              {isLoading || isLiked ? (
+                <FaHeart className="text-2xl text-red-500 hover:cursor-pointer" />
               ) : (
+                <FaRegHeart className="text-2xl text-red-500" />
+              )}
+            </div>
+          </div>
+          <div className="mt-4 px-5 pb-5">
+            <h5 className="text-xl tracking-tight text-slate-900">{title}</h5>
+            <div className="mt-2 mb-5">
+              <p className="mb-2">
+                <span className="text-3xl font-bold text-slate-900">${after_price.toFixed(2)}</span>
+                <span className="text-sm text-slate-900 line-through">${price.toFixed(2)}</span>
+              </p>
+              <div className="flex items-center">
+                <svg aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
+              </div>
+            </div>
+            {isMaxOrders ? (
+              <span className="text-red-500 cursor-text">
+                You are reached the max orders
+              </span>
+            ) : (
+              <div className="flex justify-between items-center">
                 <button
-                  className="bg-secondary text-white merriweather-bold text-sm w-[120px] h-10 rounded-full tracking-widest hover:bg-primary transition-all duration-300 before:ease relative overflow-hidden border border-secondary shadow-2xl before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-primary before:duration-300 hover:text-white hover:shadow-primary hover:before:h-64 hover:before:-translate-y-32"
+                  className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
                   onClick={addToCartHandler}
                   disabled={isBtnDisabled}
                 >
@@ -120,11 +91,11 @@ const Product = memo(
                     <span className="relative z-10">Add to cart</span>
                   )}
                 </button>
-              )}
-            </div>
-          </div>
-          <div className="text-sm text-gray-500">
-            {quantity}/{max}
+                <div className="text-sm text-gray-500">
+                  {quantity}/{max}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

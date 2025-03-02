@@ -21,7 +21,7 @@ export const CartItemsSubTotalPrice = ({ products }: TCartItemsListProps) => {
         <p className="mb-1 text-lg font-bold">{formatPrice(totalCheck)} L.E</p>
       </div>
       <p className="text-sm text-gray-700 flex justify-end">including VAT</p>
-      <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+      <button className="mt-6 w-full rounded-md bg-secondary py-1.5 font-medium text-blue-50 hover:bg-btn-secondary">
         Check out
       </button>
     </div>

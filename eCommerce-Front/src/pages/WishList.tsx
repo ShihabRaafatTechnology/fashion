@@ -7,7 +7,7 @@ const Wishlist = () => {
   const {records} = useWishList();
   return (
     <>
-      <Heading title={<>home / <span className="text-primary">wishlist</span></>} />
+      <Heading title={<>home / <span className="active">wishlist</span></>} />
       <GridList
         records={records}
         renderItems={(record) => <Product {...record} key={record.id} />}

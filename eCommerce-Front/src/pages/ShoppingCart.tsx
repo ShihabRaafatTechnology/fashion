@@ -8,7 +8,7 @@ const ShoppingCart = () => {
   const { products, loading, error } = useShoppingCart();
   return (
     <>
-      <Heading title={`home / ${<span className="text-primary">cart</span>}`} />
+      <Heading title={<>home / <span className="active">cart</span></>} />
         <div className="justify-center md:flex md:space-x-6 xl:px-0 mt-10">
           <Loading status={loading} error={error}>
             {products.length ? (
@@ -17,7 +17,7 @@ const ShoppingCart = () => {
                 <CartItemsSubTotalPrice products={products} />
               </>
             ) : (
-              <div className="text-center col-span-4 text-4xl font-extrabold text-secondary h-[70vh] flex place-items-center">
+              <div className="flex items-center justify-center text-4xl font-extrabold text-secondary h-[70vh]">
               {"No Cart Available"}
             </div>
             )}
