@@ -5,7 +5,7 @@ import { shallowEqual } from "react-redux";
 
 const useWishList = () => {
     const dispatch = useAppDispatch();
-    const { productsFullInfo } = useAppSelector((state) => state.wishlist);
+    const { productsFullInfo, loading, error } = useAppSelector((state) => state.wishlist);
 
     const cartItems = useAppSelector((state) => state.cart.items, shallowEqual);
     useEffect(() => {
@@ -21,7 +21,7 @@ const useWishList = () => {
         quantity: item.id ? cartItems[item.id] ?? 0 : 0,
         isLiked: true,
     }));
-    return {records}
+    return {records, loading, error}
 }
 
 export default useWishList

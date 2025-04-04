@@ -1,17 +1,20 @@
 import { GridList, Heading } from "@components/common";
 import { Product } from "@components/eCommerce";
+import { Loading } from "@components/feedback";
 import useWishList from "@hooks/useWishList";
 
 
 const Wishlist = () => {
-  const {records} = useWishList();
+  const { records, loading, error } = useWishList();
   return (
     <>
       <Heading title={<>home / <span className="active">wishlist</span></>} />
-      <GridList
-        records={records}
-        renderItems={(record) => <Product {...record} key={record.id} />}
-      />
+      <Loading status={loading} error={error} type="product">
+        <GridList
+          records={records}
+          renderItems={(record) => <Product {...record} key={record.id} />}
+        />
+      </Loading>
     </>
   );
 };

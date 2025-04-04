@@ -7,7 +7,7 @@ type THeaderCounter = {
     svgIcon: React.ReactNode;
 }
 
-const HeaderCounter = ({totalQuantity, page, svgIcon}: THeaderCounter) => {
+const HeaderCounter = ({totalQuantity = 0, page, svgIcon}: THeaderCounter) => {
     const navigate = useNavigate();
     const animate = useHeaderCounter(totalQuantity);
     return (

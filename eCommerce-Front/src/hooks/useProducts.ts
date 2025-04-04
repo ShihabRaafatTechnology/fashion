@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 const useProducts = () => {
     const params = useParams();
     const dispatch = useAppDispatch();
-    const { records } = useAppSelector((state) => state.products);
+    const { records, loading, error } = useAppSelector((state) => state.products);
     const cartItems = useAppSelector((state) => state.cart.items);
     const wishlistItems = useAppSelector((state) => state.wishlist.itemsId);
 
@@ -26,7 +26,7 @@ const useProducts = () => {
              };
         }
     }, [dispatch, params]);
-    return { productsFullInfo, params }
+    return { productsFullInfo, params, loading, error }
 }
 
 export default useProducts

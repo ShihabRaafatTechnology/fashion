@@ -32,12 +32,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink to="/about-us" className="hover:text-secondary">
-                    BRAND
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about-us" className="hover:text-secondary">
-                    247
+                    ABOUT US
                   </NavLink>
                 </li>
               </Nav>
@@ -51,20 +46,21 @@ const Header = () => {
               <Nav>
                 <li>
                   <NavLink
-                    to="/a"
+                    to="https://www.behance.net/shihabraafat"
                     className="hover:text-secondary"
+                    target="_blank"
                   >
-                    THE VALUED
+                    BEHANCE
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/s" className="hover:text-secondary">
-                    SIGNUP
+                  <NavLink to="https://www.instagram.com/shihab.raafat/" className="hover:text-secondary" target="_blank">
+                    INSTAGRAM
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/d-us" className="hover:text-secondary">
-                    ACCOUNT
+                  <NavLink to="https://shihab-raafat.netlify.app/" className="hover:text-secondary" target="_blank">
+                    PORTFOLIO
                   </NavLink>
                 </li>
               </Nav>
