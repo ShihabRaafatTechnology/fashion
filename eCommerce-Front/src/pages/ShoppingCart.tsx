@@ -1,9 +1,7 @@
 import { Heading } from "@components/common";
 import { CartItemsList, CartItemsSubTotalPrice } from "@components/eCommerce";
-import { Loading } from "@components/feedback";
+import { Loading, LottieHandler } from "@components/feedback";
 import useShoppingCart from "@hooks/useShoppingCart";
-import Lottie from "lottie-react";
-import cart from "@assets/lottieFiles/cart.json";
 
 const ShoppingCart = () => {
   const { products, loading, error } = useShoppingCart();
@@ -19,7 +17,7 @@ const ShoppingCart = () => {
               </>
             ) : (
               <div className="absolute bottom-0 md:w-[50rem]">
-              <Lottie animationData={cart}/>
+              <LottieHandler type="cart" message="No Cart Available"/>
             </div>
             )}
           </Loading>

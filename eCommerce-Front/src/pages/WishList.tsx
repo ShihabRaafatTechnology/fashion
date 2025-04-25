@@ -13,6 +13,8 @@ const Wishlist = () => {
         <GridList
           records={records}
           renderItems={(record) => <Product {...record} key={record.id} />}
+          lottieType="wishlist"
+          messageEmpty="No Wishlist Available"
         />
       </Loading>
     </>

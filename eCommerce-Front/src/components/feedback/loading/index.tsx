@@ -2,6 +2,7 @@ import { TLoading } from "@types"
 import CategorySkeleton from "../skeleton/categorySkeleton";
 import productSkeleton from "../skeleton/productSkeleton";
 import cartSkeleton from "../skeleton/cartSkeleton";
+import LottieHandler from "../lottieHandler";
 
 
 interface ILoading {
@@ -24,7 +25,9 @@ const Loading = ({ status, error, children, type = "category" }: ILoading) => {
         return <Skeleton/>;
     }
     if (status === "failed") {
-        return (<p>Message Error: {error}</p>)
+        console.log(error as string);
+        
+        return <LottieHandler type="error" message={error as string}/>
     }
     return (
         children

@@ -1,6 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+// SuspensePageFallback Component
+import SuspensePageFallback from "@components/feedback/SuspensePageFallback"
+
 //Layouts
 const MainLayout = lazy(() => import('@layouts/MainLayout'));;
 
@@ -18,17 +21,17 @@ import Error from '@pages/Error';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Suspense fallback="Loading please wait..."><MainLayout /></Suspense>,
-    errorElement: <Suspense fallback="Loading please wait..."><Error /></Suspense>,
+    element: <SuspensePageFallback><MainLayout /></SuspensePageFallback>,
+    errorElement: <SuspensePageFallback><Error /></SuspensePageFallback>,
     children: [{
       index: true,
-      element: <Suspense fallback="Loading please wait..."><Home /></Suspense>
+      element: <SuspensePageFallback><Home /></SuspensePageFallback>
     }, {
       path: "categories",
-      element: <Suspense fallback="Loading please wait..."><Categories /></Suspense>
+      element: <SuspensePageFallback><Categories /></SuspensePageFallback>
     }, {
       path: "categories/products/:prefix",
-      element: <Suspense fallback="Loading please wait..."><Products /></Suspense>,
+      element: <SuspensePageFallback><Products /></SuspensePageFallback>,
       loader: ({ params }) => {
         if (
           typeof params.prefix !== "string" ||

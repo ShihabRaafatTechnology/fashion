@@ -1,3 +1,5 @@
 import Loading from "./loading";
+import LottieHandler from "./lottieHandler";
+import SuspensePageFallback from "./SuspensePageFallback";
 
-export {Loading};
+export {Loading, LottieHandler, SuspensePageFallback};

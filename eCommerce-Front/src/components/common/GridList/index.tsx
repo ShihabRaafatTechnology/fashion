@@ -1,25 +1,24 @@
-import Lottie from "lottie-react";
-import wishlist from "@assets/lottieFiles/wishlist.json"
+import { LottieHandler } from "@components/feedback";
 
 type TGridList<T> = {
-    records: T[];
-    renderItems: (record:T) => React.ReactNode;
+  records: T[];
+  renderItems: (record: T) => React.ReactNode;
+  messageEmpty: string;
+  lottieType: "loading" | "wishlist" | "cart" | "empty" | "notFound";
 }
 
-const GridList = <T,>({records, renderItems}:TGridList<T>) => {
-    const categoriesList =
+const GridList = <T,>({ records, renderItems, messageEmpty, lottieType }: TGridList<T>) => {
+  const categoriesList =
     records.length > 0 ? (
-      records.map((record) => renderItems(record))
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center sm:mt-10 xlg:mt-0">
+        {records.map((record) => renderItems(record))}
+      </div>
     ) : (
-      <div className="col-span-1 md:col-span-4 md:w-[30rem]">
-         <Lottie animationData={wishlist} />
+      <div className="">
+        <LottieHandler type={lottieType} message={messageEmpty} />
       </div>
     );
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center sm:mt-10 xlg:mt-0">
-        {categoriesList}
-    </div>
-  )
+  return categoriesList
 }
 
 export default GridList
