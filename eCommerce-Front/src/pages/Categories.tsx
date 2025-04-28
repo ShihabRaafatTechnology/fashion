@@ -8,12 +8,9 @@ const Categories = () => {
   return (
     <>
       <Heading title={<>home / <span className="active">categories</span></>} />
-      <Loading status={loading} error={error}>
-        <GridList 
-        records={records} 
-        renderItems={(record) => <Category {...record} key={record.id} />}
-        lottieType="empty"
-        messageEmpty="No Categories Available"/>
+      <Loading status={loading} error={error} type="category">
+        <GridList records={records} renderItems={(record) => <Category {...record} key={record.id} />} lottieType="empty"
+          messageEmpty="No Categories Available"/>
       </Loading>
     </>
   );
