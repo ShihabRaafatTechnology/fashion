@@ -4,7 +4,7 @@ const cartSkeleton = () => (
     <div className="md:flex justify-center items-center">
         <div className='grid grid-rows-1 md:grid-rows-2 lg:grid-rows-4 gap-4 place-items-center sm:mt-10 xlg:mt-0'>{Array(4).fill(0).map((_, indx) => (
             <ContentLoader
-            key={indx}
+                key={indx}
                 speed={2}
                 width={250}
                 height={108}

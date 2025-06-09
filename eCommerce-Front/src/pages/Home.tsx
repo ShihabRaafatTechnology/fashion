@@ -8,14 +8,14 @@ const Home = () => {
 
   return (
     <div>
-      <Hero />
+      <Hero/>
       <FrameCategories />
       <Loading status={loading} error={error} type="category">
-        <GridList
-          records={records}
-          renderItems={(record) => <Category {...record} key={record.id} />}
-          lottieType="empty"
-          messageEmpty="No Categories Available" />
+         <GridList
+          records={records} 
+          itemType="categories"
+          typeLottie="empty"
+          renderItems={(record) => <Category {...record} key={record.id} />} />
       </Loading>
     </div>
   );

@@ -12,9 +12,9 @@ const Wishlist = () => {
       <Loading status={loading} error={error} type="product">
         <GridList
           records={records}
+          itemType="favorites"
+          typeLottie="wishlist"
           renderItems={(record) => <Product {...record} key={record.id} />}
-          lottieType="wishlist"
-          messageEmpty="No Wishlist Available"
         />
       </Loading>
     </>

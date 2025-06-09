@@ -12,9 +12,9 @@ const Products = memo(() => {
       <Loading status={loading} error={error} type="product">
         <GridList
           records={productsFullInfo}
+          itemType="products"
+          typeLottie="empty"
           renderItems={(record) => <Product {...record} key={record.id} />}
-          lottieType="empty"
-          messageEmpty="No Products Available"
         />
       </Loading>
     </>
