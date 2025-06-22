@@ -7,7 +7,7 @@ import empty from "@assets/lottieFiles/empty.json";
 import error from "@assets/lottieFiles/error.json";
 
 
-export const lottieFilesMap = {
+const lottieFilesMap = {
     cart,
     loading,
     notFound,

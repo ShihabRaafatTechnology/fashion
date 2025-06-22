@@ -61,19 +61,19 @@ const router = createBrowserRouter([
       },
     }, {
       path: "cart",
-      element: <SuspensePageFallback><ShoppingCart /></SuspensePageFallback>
+      element: <Suspense fallback="Loading please wait..."><ShoppingCart /></Suspense>
     }, {
       path: "wishlist",
-      element: <SuspensePageFallback><Wishlist /></SuspensePageFallback>
+      element: <Suspense fallback="Loading please wait..."><Wishlist /></Suspense>
     }, {
       path: "about-us",
-      element: <SuspensePageFallback><AboutUs /></SuspensePageFallback>
+      element: <Suspense fallback="Loading please wait..."><AboutUs /></Suspense>
     }, {
       path: "sign-in",
-      element: <SuspensePageFallback><Login /></SuspensePageFallback>
+      element: <Suspense fallback="Loading please wait..."><Login /></Suspense>
     }, {
       path: "register",
-      element: <SuspensePageFallback><Register /></SuspensePageFallback>
+      element: <Suspense fallback="Loading please wait..."><Register /></Suspense>
     }]
   }
 ]);

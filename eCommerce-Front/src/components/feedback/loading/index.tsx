@@ -25,11 +25,9 @@ const Loading = ({ status, error, children, type = "category" }: ILoading) => {
         return <Skeleton/>;
     }
     if (status === "failed") {
-        return (
-            <div>
-                <LottieHandler type="error" message={error as string}/>
-            </div>
-        )
+        console.log(error as string);
+        
+        return <LottieHandler type="error" message={error as string}/>
     }
     return (
         children
