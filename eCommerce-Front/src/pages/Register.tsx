@@ -1,27 +1,18 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { registerSchema, TFormHandler } from "@validations/registerSchema";
+import { Input } from "@components/form";
 
-
-
-const registerSchema = z.object({
-  firstName: z.string().min(1, { message: "First name is required." }),
-  lastName: z.string().min(1, { message: "Last name is required." }),
-  email: z.string().min(1, { message: "The email address is required." }).email(),
-  password: z.string().min(8, { message: "Password must be at least 8 characters longs" }).regex(/.*[!@#$%^&*()_+{}|[\]\\:";'<>?,./].*/, {
-    message: "Password should contain at least 1 special character",
-  }),
-  confirmPassword: z.string().min(1, { message: "Password confirm is required." })
-}).refine((input) => input.password === input.confirmPassword, { message: "Password doesn't match.", path: ["confirmPassword"] });
-
-
-type TFormHandler = z.infer<typeof registerSchema>
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { register, handleSubmit } = useForm<TFormHandler>();
+  const { register, handleSubmit, formState: { errors } } = useForm<TFormHandler>({
+    resolver: zodResolver(registerSchema),
+    mode: "onBlur",
+  });
   const submitForm: SubmitHandler<TFormHandler> = (data) => console.log(data);
 
   return (
@@ -35,21 +26,10 @@ const Register = () => {
             </p>
 
             <form className="my-8 text-sm" onSubmit={handleSubmit(submitForm)}>
-              <div className="flex flex-col my-4">
-                <label className="text-gray-700">First Name</label>
-                <input type="text" className="mt-2 p-2 border border-gray-300 rounded text-sm text-gray-900" {...register("firstName")} />
-              </div>
 
-              <div className="flex flex-col my-4">
-                <label className="text-gray-700">Last Name</label>
-                <input type="text" className="mt-2 p-2 border border-gray-300 rounded text-sm text-gray-900" {...register("lastName")} />
-              </div>
-
-              <div className="flex flex-col my-4">
-                <label className="text-gray-700">Email Address</label>
-                <input type="text" className="mt-2 p-2 border border-gray-300 rounded text-sm text-gray-900" {...register("email")} />
-              </div>
-
+             <Input label="First Name" name="firstName" type="text" register={register} error={errors.firstName?.message as string}/>
+             <Input label="Last Name" name="lastName" type="text" register={register} error={errors.lastName?.message as string}/>
+             <Input label="Email" name="email" type="text" register={register} error={errors.email?.message as string}/>             
               <div className="flex flex-col my-4">
                 <label className="text-gray-700">Password</label>
                 <div className="relative flex items-center mt-2">
@@ -75,6 +55,7 @@ const Register = () => {
                     )}
                   </button>
                 </div>
+                <span className="text-red-400 italic">{errors.password?.message}</span>
               </div>
 
               <div className="flex flex-col my-4">
@@ -102,6 +83,7 @@ const Register = () => {
                     )}
                   </button>
                 </div>
+                <span className="text-red-400 italic">{errors.confirmPassword?.message}</span>
               </div>
 
               <div className="flex items-center">
