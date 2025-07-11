@@ -1,14 +1,11 @@
 import { useForm, SubmitHandler } from "react-hook-form"
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, TFormHandler } from "@validations/registerSchema";
-import { Input } from "@components/form";
+import { Input, PasswordInput } from "@components/form";
 
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<TFormHandler>({
     resolver: zodResolver(registerSchema),
     mode: "onBlur",
@@ -26,65 +23,40 @@ const Register = () => {
             </p>
 
             <form className="my-8 text-sm" onSubmit={handleSubmit(submitForm)}>
+              <Input
+                label="First Name"
+                name="firstName"
+                type="text"
+                register={register}
+                error={errors.firstName?.message as string}
+              />
+              <Input
+                label="Last Name"
+                name="lastName"
+                type="text"
+                register={register}
+                error={errors.lastName?.message as string}
+              />
+              <Input
+                label="Email"
+                name="email"
+                type="text"
+                register={register}
+                error={errors.email?.message as string}
+              />
+              <PasswordInput
+                label="Password"
+                name="password"
+                register={register}
+                error={errors.password?.message as string}
+              />
+              <PasswordInput
+                label="Confirm Password"
+                name="confirmPassword"
+                register={register}
+                error={errors.confirmPassword?.message as string}
+              />
 
-             <Input label="First Name" name="firstName" type="text" register={register} error={errors.firstName?.message as string}/>
-             <Input label="Last Name" name="lastName" type="text" register={register} error={errors.lastName?.message as string}/>
-             <Input label="Email" name="email" type="text" register={register} error={errors.email?.message as string}/>             
-              <div className="flex flex-col my-4">
-                <label className="text-gray-700">Password</label>
-                <div className="relative flex items-center mt-2">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    className="flex-1 p-2 pr-10 border border-gray-300 rounded text-sm text-gray-900"
-                    {...register("password")}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-2 bg-transparent flex items-center justify-center text-gray-700"
-                  >
-                    {showPassword ? (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    ) : (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M3 3l18 18" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-                <span className="text-red-400 italic">{errors.password?.message}</span>
-              </div>
-
-              <div className="flex flex-col my-4">
-                <label className="text-gray-700">Password Confirmation</label>
-                <div className="relative flex items-center mt-2">
-                  <input
-                    type={showConfirmPassword ? "text" : "password"}
-                    className="flex-1 p-2 pr-10 border border-gray-300 rounded text-sm text-gray-900"
-                    {...register("confirmPassword")}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-2 bg-transparent flex items-center justify-center text-gray-700"
-                  >
-                    {showConfirmPassword ? (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                    ) : (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M3 3l18 18" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-                <span className="text-red-400 italic">{errors.confirmPassword?.message}</span>
-              </div>
 
               <div className="flex items-center">
                 <input type="checkbox" id="remember_me" name="remember_me" className="mr-2 rounded" />
