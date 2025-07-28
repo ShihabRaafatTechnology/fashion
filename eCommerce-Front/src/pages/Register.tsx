@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, TFormHandler } from "@validations/registerSchema";
 import { Input, PasswordInput } from "@components/form";
 import React from "react";
+import useCheckEmailAvailability from "@hooks/useCheckEmailAvailability";
+import { email } from "node_modules/zod/dist/types/v4/core/regexes";
 
 
 const Register = () => {
@@ -11,13 +13,20 @@ const Register = () => {
     resolver: zodResolver(registerSchema),
     mode: "onBlur",
   });
+
+  const {checkEmailAvailability, enteredEmail, emailAvailabilityStatus, resetCheckEmailAvailability} = useCheckEmailAvailability();
   const submitForm: SubmitHandler<TFormHandler> = (data) => console.log(data);
 
   const emailOnBlurHandler = async(e:React.FocusEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     await trigger("email")
     const {isDirty, invalid} = getFieldState("email");
-    if(isDirty && !invalid){
-      
+    if(isDirty && !invalid && enteredEmail !==value){
+      // Checking
+      checkEmailAvailability(value);
+    }
+    if(isDirty && invalid && enteredEmail){
+      resetCheckEmailAvailability();
     }
   }
   
