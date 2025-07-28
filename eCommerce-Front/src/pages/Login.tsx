@@ -16,9 +16,12 @@ const Login = () => {
       <div className="w-full h-screen flex items-center justify-center">
         <div className="w-full sm:w-5/6 md:w-2/3 lg:w-1/2 h-full bg-white flex items-center justify-center">
           <div className="w-full px-12">
-            <h2 className="text-center text-2xl font-bold tracking-wide text-gray-800">Sign In</h2>
+          <h2 className="text-center text-xl font-bold tracking-wide text-gray-800">Sign In</h2>
+            <p className="text-center text-sm text-gray-600 mt-2">
+              Don't have an account? <Link to="/register" className="text-blue-600 hover:text-blue-700 hover:underline">Register here</Link>
+            </p>
 
-            <form className="my-8 text-sm" >
+            <form className="my-8 text-sm" onSubmit={handleSubmit(submitForm)}>
               <Input 
                   label="Email Address"
                   name="email"
@@ -56,7 +59,7 @@ const Login = () => {
 
           </div>
         </div>
-        <div className="hidden lg:flex lg:w-1/2 h-full bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1562408590-e32931084e23?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+        <div className="hidden lg:flex lg:w-1/2 h-full bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
         </div>
       </div>
     </div>

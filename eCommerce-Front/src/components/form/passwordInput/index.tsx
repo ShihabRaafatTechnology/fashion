@@ -18,11 +18,11 @@ const PasswordInput = <TFieldValue extends FieldValues>({
 
   return (
     <div className="flex flex-col my-4">
-      <label className="text-gray-700">{label}</label>
+      <label className="text-gray-700 text-base">{label}</label>
       <div className="relative flex items-center mt-2">
         <input
           type={showPassword ? "text" : "password"}
-          className="flex-1 p-4 pr-10 border border-gray-300 rounded text-lg text-gray-900"
+          className="flex-1 p-1 pr-10 border border-gray-300 rounded text-base text-gray-900"
           {...register(name)}
         />
         <button
