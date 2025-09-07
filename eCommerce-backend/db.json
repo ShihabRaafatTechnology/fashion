@@ -1,7 +1,34 @@
 {
-  "users": [{
-    "email": "shihabraafat7@gmail.com"
-  }],
+  "users": [
+    {
+      "email": "sraafat@tmg.com.eg",
+      "password": "$2a$10$E7n4XcnuclP9qPfjmLB4BOUvbFO8nw2beRowVhwP7VdkrcP0aHsCe",
+      "firstName": "shihab",
+      "lastName": "kamel",
+      "id": 1
+    },
+    {
+      "email": "skamel@tmg.com.eg",
+      "password": "$2a$10$/LoYhaBX7wIc6Vr1Vy18w.HdzaIoxaCRmCj7lJFAa/RCHLlgEwWtK",
+      "firstName": "Shihab",
+      "lastName": "Raafat",
+      "id": 2
+    },
+    {
+      "email": "skamesl@tmg.com.eg",
+      "password": "$2a$10$bT81II5Ypze6aSQxsIj71Om5vgUuduuU6mdwAjmJUM1PqGG6DR/lW",
+      "firstName": "Shihab",
+      "lastName": "Raafat",
+      "id": 3
+    },
+    {
+      "email": "skamsesl@tmg.com.eg",
+      "password": "$2a$10$9ru9EcYJT4NWpZT2ViymtOcnzjTBvpRWZP4CNHoAxsVJcyJQMYs6y",
+      "firstName": "Shihab",
+      "lastName": "Raafat",
+      "id": 4
+    }
+  ],
   "categories": [
     {
       "id": 1,
