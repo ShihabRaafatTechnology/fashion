@@ -1,13 +1,19 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, TFormHandler } from "@validations/registerSchema";
 import { Input, PasswordInput } from "@components/form";
 import React from "react";
 import useCheckEmailAvailability from "@hooks/useCheckEmailAvailability";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { actAuthRegister } from "@store/auth/authSlice";
 // import { email } from "node_modules/zod/dist/types/v4/core/regexes";
 
 const Register = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const {loading, error} = useAppSelector((state) => state.auth);
+
   const {
     register,
     handleSubmit,
@@ -25,7 +31,10 @@ const Register = () => {
     emailAvailabilityStatus,
     resetCheckEmailAvailability,
   } = useCheckEmailAvailability();
-  const submitForm: SubmitHandler<TFormHandler> = (data) => console.log(data);
+  const submitForm: SubmitHandler<TFormHandler> = (data) => {
+    const {firstName, lastName, email, password} = data;
+    dispatch(actAuthRegister({firstName, lastName, email, password})).unwrap().then(()=> navigate("/sign-in?message=account_created"));
+  };
 
   const emailOnBlurHandler = async (e: React.FocusEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -103,40 +112,18 @@ const Register = () => {
                 error={errors.confirmPassword?.message as string}
               />
 
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="remember_me"
-                  name="remember_me"
-                  className="mr-2 rounded p-2"
-                />
-                <label
-                  htmlFor="remember_me"
-                  className="text-gray-700 text-base"
-                >
-                  I accept the{" "}
-                  <a
-                    href="#"
-                    className="text-blue-600 hover:text-blue-700 hover:underline"
-                  >
-                    terms
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="#"
-                    className="text-blue-600 hover:text-blue-700 hover:underline"
-                  >
-                    privacy policy
-                  </a>
-                </label>
-              </div>
-
               <div className="my-4 flex items-center justify-end space-x-4">
-                <button className="bg-blue-600 hover:bg-blue-700 rounded-lg px-5 py-2 text-base text-gray-100 hover:shadow-xl transition duration-150 uppercase" disabled={emailAvailabilityStatus === "checking"? true: false}>
-                  Sign Up
+                <button className="bg-blue-600 hover:bg-blue-700 rounded-lg px-5 py-2 text-base text-gray-100 hover:shadow-xl transition duration-150 uppercase" disabled={emailAvailabilityStatus === "checking"? true: false || loading === "pending"}>
+                  {loading === "pending"?
+                    "Loading..." 
+                  : "Register"} 
                 </button>
               </div>
             </form>
+
+            {error && (
+             <p className="text-center text-red-500">{error}</p>
+            )}
 
             <div className="flex items-center justify-between">
               <div className="w-full h-[1px] bg-gray-300"></div>

@@ -1,4 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import auth from "./auth/authSlice";
 import categories from "./categories/categoriesSlice";
 import products from "./products/productsSlice";
 import cart from "./cart/cartSlice";
@@ -19,7 +20,7 @@ const wishlistPersistConfig = {
 }
 
 const rootReducer = combineReducers(
-    { categories, products, wishlist: persistReducer(wishlistPersistConfig, wishlist), cart: persistReducer(cartPersistConfig, cart) }
+    { auth, categories, products, wishlist: persistReducer(wishlistPersistConfig, wishlist), cart: persistReducer(cartPersistConfig, cart) }
 );
 
 
